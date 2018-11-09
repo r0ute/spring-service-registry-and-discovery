@@ -13,3 +13,7 @@ zuul:
     reviews:
       path: rs/**
       serviceId: review-service
+sec:
+  user:
+    name: test
+    password: test
