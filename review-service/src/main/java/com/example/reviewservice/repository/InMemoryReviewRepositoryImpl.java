@@ -1,6 +1,7 @@
 package com.example.reviewservice.repository;
 
 import com.example.reviewservice.model.Review;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 
 import java.util.Arrays;
@@ -9,6 +10,7 @@ import java.util.List;
 import java.util.UUID;
 
 @Repository
+@Qualifier("reviewRepository")
 public class InMemoryReviewRepositoryImpl implements ReviewRepository {
 
     private static final List<Review> reviews = Collections.unmodifiableList(Arrays.asList(
