@@ -1,11 +1,15 @@
 spring:
   application:
     name: gateway
-zuul:
-  prefix: '/api/'
 server:
   port: 8888
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
+zuul:
+  prefix: /api
+  ignored-services: '*'
+  routes:
+    products:
+      path: /ps/**
+      serviceId: product-service
+    reviews:
+      path: rs/**
+      serviceId: review-service
