@@ -3,3 +3,8 @@ spring:
     name: 'product-service'
 server:
   port: 9000
+---
+spring:
+  profiles: replica
+server:
+  port: 9001
