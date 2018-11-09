@@ -1,6 +1,7 @@
 package com.example.reviewservice.resource;
 
 import com.example.reviewservice.model.Review;
+import com.example.reviewservice.repository.InMemoryReviewRepositoryImpl;
 import com.example.reviewservice.repository.ReviewRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
