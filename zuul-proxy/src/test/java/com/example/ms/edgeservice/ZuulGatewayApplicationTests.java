@@ -1,4 +1,4 @@
-package com.example.ms.apigateway;
+package com.example.ms.edgeservice;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

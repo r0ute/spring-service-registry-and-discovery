@@ -4,5 +4,5 @@ include 'eureka-server'
 include 'product-service'
 include 'review-service'
 include 'eureka-client'
-include 'zuul-gateway'
+include 'zuul-proxy'
 

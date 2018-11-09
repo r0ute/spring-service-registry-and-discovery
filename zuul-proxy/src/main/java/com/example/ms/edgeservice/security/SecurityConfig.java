@@ -1,4 +1,4 @@
-package com.example.ms.apigateway.security;
+package com.example.ms.edgeservice.security;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;

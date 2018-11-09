@@ -1,6 +1,6 @@
-package com.example.ms.apigateway;
+package com.example.ms.edgeservice;
 
-import com.example.ms.apigateway.filter.pre.LoggingFilter;
+import com.example.ms.edgeservice.filter.pre.LoggingFilter;
 import com.netflix.zuul.ZuulFilter;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

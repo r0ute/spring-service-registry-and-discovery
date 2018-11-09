@@ -1,4 +1,4 @@
-package com.example.ms.apigateway.filter.pre;
+package com.example.ms.edgeservice.filter.pre;
 
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
