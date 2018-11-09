@@ -1,8 +1,9 @@
 rootProject.name = 'service-registry-and-discovery'
 
-include 'eureka-server'
-include 'product-service'
-include 'review-service'
-include 'eureka-client'
-include 'zuul-proxy'
+include 'core:product-service'
+include 'core:review-service'
+
+include 'support:eureka-server'
+include 'support:eureka-client'
+include 'support:zuul-proxy'
 
