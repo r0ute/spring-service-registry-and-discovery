@@ -2,4 +2,4 @@ spring:
   application:
     name: 'product-service'
 server:
-  port: ${random.int[9000,9100]}
+  port: 9000

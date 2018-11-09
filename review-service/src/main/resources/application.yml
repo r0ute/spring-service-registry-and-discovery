@@ -2,4 +2,4 @@ spring:
   application:
     name: 'review-service'
 server:
-  port: ${random.int[9100,9200]}
+  port: 9100
