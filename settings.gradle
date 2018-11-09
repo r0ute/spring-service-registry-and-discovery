@@ -3,4 +3,5 @@ rootProject.name = 'service-registry-and-discovery'
 include 'eureka-service'
 include 'product-service'
 include 'review-service'
+include 'eureka-client'
 
