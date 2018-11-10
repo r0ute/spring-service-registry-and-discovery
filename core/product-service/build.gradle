@@ -16,7 +16,7 @@ apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 
 group = 'com.example.ms.core'
-version = '0.0.1-SNAPSHOT'
+version = '0.0.2-SNAPSHOT'
 sourceCompatibility = 1.8
 
 repositories {
@@ -29,6 +29,7 @@ ext {
 }
 
 dependencies {
+	implementation('org.springframework.boot:spring-boot-starter-actuator')
 	implementation('org.springframework.cloud:spring-cloud-starter-netflix-eureka-client')
 	implementation('org.springframework.boot:spring-boot-starter-web')
 	testImplementation('org.springframework.boot:spring-boot-starter-test')
@@ -38,5 +39,9 @@ dependencyManagement {
 	imports {
 		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
 	}
+}
+
+springBoot {
+	buildInfo()
 }
 
