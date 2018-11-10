@@ -31,7 +31,7 @@ public class LoggingFilter extends ZuulFilter {
     public Object run() throws ZuulException {
         HttpServletRequest request = RequestContext.getCurrentContext().getRequest();
 
-        logger.info("{} {}", request.getMethod(), request.getRequestURI());
+        logger.debug("{} {}", request.getMethod(), request.getRequestURI());
 
         return null;
     }

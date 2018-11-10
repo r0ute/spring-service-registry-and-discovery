@@ -13,7 +13,13 @@ zuul:
     reviews:
       path: /rs/**
       serviceId: review-service
+    composite-products:
+      path: /cps/**
+      serviceId: product-composite-service
 sec:
   user:
     name: test
     password: test
+logging:
+  level:
+    com.example.ms.edgeservice.filter: DEBUG
