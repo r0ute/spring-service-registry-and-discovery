@@ -16,7 +16,7 @@ public class LogRequestFilter implements ExchangeFilterFunction {
 
     @Override
     public Mono<ClientResponse> filter(ClientRequest request, ExchangeFunction next) {
-        logger.debug("{} {} {}", request.method(), request.url(), request.attributes());
+        logger.debug("{} {}", request.method(), request.url());
 
         return next.exchange(request);
     }

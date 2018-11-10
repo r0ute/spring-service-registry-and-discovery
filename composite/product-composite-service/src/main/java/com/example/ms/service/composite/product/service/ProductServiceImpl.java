@@ -3,8 +3,6 @@ package com.example.ms.service.composite.product.service;
 import com.example.ms.service.composite.product.dto.Product;
 import com.example.ms.service.composite.product.dto.Review;
 import com.example.ms.service.composite.product.filter.LogRequestFilter;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerExchangeFilterFunction;
 import org.springframework.stereotype.Service;
@@ -45,8 +43,9 @@ public class ProductServiceImpl implements ProductService {
                 .filter(logRequestFilter)
                 .build()
                 .get()
-                .uri("/reviews")
-                .attribute("productId", id)
+                .uri(uriBuilder -> uriBuilder.path("/reviews")
+                        .queryParam("productId", id)
+                        .build())
                 .retrieve()
                 .bodyToFlux(Review.class);
 

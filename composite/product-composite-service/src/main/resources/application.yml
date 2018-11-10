@@ -3,6 +3,9 @@ spring:
     name: product-composite-service
 server:
   port: 10000
+---
+spring:
+  profiles: dev
 logging:
   level:
     com.example.ms.service.composite.product.filter: DEBUG
