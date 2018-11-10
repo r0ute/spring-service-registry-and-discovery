@@ -3,10 +3,7 @@ package com.example.ms.service.product.repository;
 import com.example.ms.service.product.model.Product;
 import org.springframework.stereotype.Repository;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 
 @Repository
 public class InMemoryProductRepositoryImpl implements ProductRepository {
@@ -19,5 +16,13 @@ public class InMemoryProductRepositoryImpl implements ProductRepository {
     @Override
     public List<Product> getProducts() {
         return products;
+    }
+
+    @Override
+    public Product getProduct(UUID id) {
+        return products.stream()
+                .filter(product -> Objects.equals(product.getId(), id))
+                .findAny()
+                .orElseThrow(NoSuchElementException::new);
     }
 }
