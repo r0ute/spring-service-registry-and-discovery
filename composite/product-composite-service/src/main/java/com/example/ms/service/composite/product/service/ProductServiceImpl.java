@@ -3,6 +3,8 @@ package com.example.ms.service.composite.product.service;
 import com.example.ms.service.composite.product.dto.Product;
 import com.example.ms.service.composite.product.dto.Review;
 import com.example.ms.service.composite.product.filter.LogRequestFilter;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerExchangeFilterFunction;
 import org.springframework.stereotype.Service;
@@ -14,6 +16,8 @@ import java.util.UUID;
 
 @Service
 public class ProductServiceImpl implements ProductService {
+
+    private static final Logger logger = LoggerFactory.getLogger(ProductServiceImpl.class);
 
     public static final String PRODUCT_SERVICE_ID = "product-service";
 
@@ -54,6 +58,6 @@ public class ProductServiceImpl implements ProductService {
                     product1.setReviews(reviews1);
 
                     return product1;
-                }).doOnError(Throwable::printStackTrace);
+                }).doOnError(throwable -> logger.error("An error occurred while zipping product with reviews", throwable));
     }
 }
