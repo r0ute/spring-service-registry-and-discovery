@@ -1,13 +1,12 @@
 package com.example.ms.service.review.repository;
 
+import com.example.ms.service.review.dto.ReviewSearchRequest;
 import com.example.ms.service.review.model.Review;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
+import java.util.stream.Collectors;
 
 @Repository
 @Qualifier("reviewRepository")
@@ -20,7 +19,9 @@ public class InMemoryReviewRepositoryImpl implements ReviewRepository {
     ));
 
     @Override
-    public List<Review> getReviews() {
-        return reviews;
+    public List<Review> getReviews(ReviewSearchRequest request) {
+        return reviews.stream()
+                .filter(review -> request.getProductId() == null || Objects.equals(request.getProductId(), review.getProductId()))
+                .collect(Collectors.toList());
     }
 }

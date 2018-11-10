@@ -1,5 +1,6 @@
 package com.example.ms.service.review.repository;
 
+import com.example.ms.service.review.dto.ReviewSearchRequest;
 import com.example.ms.service.review.model.Review;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
@@ -11,7 +12,7 @@ import java.util.List;
 public class BrokenReviewRepositoryImpl implements ReviewRepository {
 
     @Override
-    public List<Review> getReviews() {
+    public List<Review> getReviews(ReviewSearchRequest request) {
         throw new UnsupportedOperationException("Sorry, not today.");
     }
 }

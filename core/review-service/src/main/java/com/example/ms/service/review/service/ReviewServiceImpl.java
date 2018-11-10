@@ -1,5 +1,6 @@
 package com.example.ms.service.review.service;
 
+import com.example.ms.service.review.dto.ReviewSearchRequest;
 import com.example.ms.service.review.model.Review;
 import com.example.ms.service.review.repository.ReviewRepository;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
@@ -24,15 +25,15 @@ public class ReviewServiceImpl implements ReviewService {
 
     @Override
     @HystrixCommand(fallbackMethod = "getEmptyReviews")
-    public List<Review> getReviews() {
+    public List<Review> getReviews(ReviewSearchRequest request) {
         if (LocalDateTime.now().getMinute() % 2 == 0) {
-            return brokenReviewRepository.getReviews();
+            return brokenReviewRepository.getReviews(request);
         } else {
-            return reviewRepository.getReviews();
+            return reviewRepository.getReviews(request);
         }
     }
 
-    public List<Review> getEmptyReviews() {
+    public List<Review> getEmptyReviews(ReviewSearchRequest request) {
         return Collections.emptyList();
     }
 }
