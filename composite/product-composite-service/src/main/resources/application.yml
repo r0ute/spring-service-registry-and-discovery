@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: product-composite-service
+server:
+  port: 10000
+logging:
+  level:
+    com.example.ms.service.composite.product.filter: DEBUG

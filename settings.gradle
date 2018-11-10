@@ -3,6 +3,8 @@ rootProject.name = 'service-registry-and-discovery'
 include 'core:product-service'
 include 'core:review-service'
 
+include 'composite:product-composite-service'
+
 include 'support:eureka-server'
 include 'support:eureka-client'
 include 'support:zuul-proxy'
